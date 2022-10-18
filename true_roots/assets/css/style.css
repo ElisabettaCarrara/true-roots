@@ -1,0 +1,228 @@
+/* Stili Globali */
+
+/*
+font-family: 'Oswald', sans-serif;
+font-family: 'Roboto Mono', monospace;
+
+Oswald used for Titles - 400/500/600/700 font-weight
+Roboto Mono used for Paragraphs - 400/700 font-weight
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 700;
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    padding: 20px;
+    color: firebrick;
+}
+
+h3,
+h4 {
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    padding: 15px;
+    color: firebrick;
+}
+
+h5,
+h6 {
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    padding: 10px;
+    color: firebrick;
+}
+
+p,
+a,
+span {
+    font-size: 16px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: firebrick;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: yellow;
+}
+
+.btn-primary {
+    background-color: firebrick;
+    border: 2px solid firebrick;
+    margin: 20px;
+}
+
+.btn-primary:hover {
+    background-color: yellow;
+    border: 2px solid yellow;
+    color: black;
+}
+
+footer {
+    background-color: firebrick;
+    padding: 20px;
+}
+
+.foot {
+    color: white;
+}
+
+.addr {
+    color: white;
+}
+
+.addr:hover {
+    color: yellow;
+    text-decoration: none;
+}
+
+.addr i {
+    color: white;
+    padding-right: 10px;
+}
+
+.addr i:hover {
+    color: yellow;
+}
+
+.nav .nav-item .fa-brands {
+    color: white;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    font-size: 24px;
+}
+
+.nav .nav-item .fa-brands:hover {
+    color: yellow;
+}
+
+.display-4, .lead {
+    color: white;
+}
+
+.card-deck {
+    padding-top: 10px;
+}
+
+/* Homepage */
+
+.jumbotron {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url("../img/pizza1.jpg");
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    display: flex;
+    padding: 90px;
+    flex-direction: column;
+}
+
+/* Contatti */
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 40%;
+    position: relative;
+    height: 0;
+}
+
+.map-resposnive iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.contattaci {
+    background-color: rgba(178, 34, 34, 0.205);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menu */
+
+.pietanze {
+    padding: 20px;
+}
+
+#arti {
+    background-color: rgba(255, 255, 0, 0.411);
+}
+
+.tab-content {
+    padding: 40px;
+}
+
+.prenota {
+    background-color: rgba(178, 34, 34, 0.205);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Chi Siamo */
+
+.chi-siamo {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url("../img/pizza2.jpg");
+}
+
+.about {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    display: flex;
+    padding: 90px;
+    flex-direction: column;
+}
+
+.features {
+    padding: 20px;
+    margin: 20px;
+}
+
+.card {
+    background-color: rgba(178, 34, 34, 0.205);
+}
