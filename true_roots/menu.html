@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
-    <script src="./assets/js/main.js" type="text/javascript"></script>
     <title>True Roots</title>
 </head>
 
@@ -40,6 +39,14 @@
                         <a class="nav-link" href="menu.html">Menu</a>
                     </li>
                     <li class="nav-item">
+                        <a href="cart.html">
+                            <div class="cart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <div id="cartAmount" class="cartAmount">0</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="chi-siamo.html">Chi Siamo</a>
                     </li>
                     <li class="nav-item">
@@ -50,999 +57,68 @@
         </nav>
     </header>
     <main>
-        <div>
-            <h4>Istruzioni:</h4>
-            <p>Per ordinare inizia aggiungendo i costi di consegna cliccando su <span class="istruzioni">Inizia!</span> poi clicca su <span
-                    class="istruzioni">Ordina</span> sotto ogni pietanza. Per ogni click del pulsante la quantità si
-                aggiornerà nel carrello. Per esempio cliccando tre volte il pulsante <span
-                    class="istruzioni">Ordina</span> per la Pizza Napoletana avrai ordinato tre Pizze Napoletane. al completamento
-                dell'ordine visita la sezione <span class="istruzioni">Carrello</span> per controllare il tuo ordine ed
-                inviarlo.</p>
-            <p>Se lo desideri puoi anche visitare il menu senza ordinare.</p>
-        </div>
+        <section id="listino">
+            <h2>Ordina a Domicilio</h2>
+            <div class="shop" id="shop">
 
-        <div class="item" id="ordine" data-cost="10">
-            <button id="ordine-btn" class="addToCartButton bot-ordine-btn btn btn-primary" type="button">Inizia!</button>
-        </div>
-        <div>
-            <section class="pietanze">
-                <ul class="nav nav-pills justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#pizze" data-toggle="pill">Pizze</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#panini" data-toggle="pill">Panini</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#orientale" data-toggle="pill">Cibi Orientali</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#bevande" data-toggle="pill">Bevande</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#carrello">Carrello</a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane container active" id="pizze">
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="marinara" data-cost="6,80">Marinara
-                                        <button type="button" class="bot-marinara-btn btn btn-primary">Ordina</button>
-                                    </h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, olio evo, aglio, origano
-                                    </p>
-                                    <p class="card-text">
-                                        6,80 €
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="napoletana" data-cost="7,80">Napoletana
-                                        <button type="button" class="bot-napoletana-btn btn btn-primary">Ordina</button>
-                                    </h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, mozzarella fior di latte, acciughe, capperi, origano e olio
-                                        evo
-                                    </p>
-                                    <p class="card-text">
-                                        7,80 €
-                                    </p>
 
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="margherita" data-cost="7.00">Margherita<button
-                                            type="button" class="bot-margherita-btn btn btn-primary">Ordina</button>
-                                    </h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, mozzarella fior di latte, basilico e olio evo
-                                    </p>
-                                    <p class="card-text">
-                                        7,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="misticanza" data-cost="9,20">Misticanza<button
-                                            type="button" class="bot-misticanza-btn btn btn-primary">Ordina</button>
-                                    </h5>
-                                    <p class="card-text">
-                                        Mozzarella fior di latte, insalata misticanza, pomodorini, julienne di zucchine
-                                        e
-                                        carote
-                                    </p>
-                                    <p class="card-text">
-                                        9,20 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="vegetariana" data-cost="10,00">Vegetariana<button
-                                            type="button" class="bot-vegetariana-btn btn btn-primary">Ordina</button>
-                                    </h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, mozzarella fior di latte, verdure grigliate, pomodorini
-                                        confit,
-                                        basilico e olio evo
-                                    </p>
-                                    <p class="card-text">
-                                        10,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="stagionata" data-cost="12,00">Stagionata<button
-                                            type="button" class="bot-stagionata-btn btn btn-primary">Ordina</button>
-                                    </h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, mozzarella fior di latte, bacon croccante, ricotta
-                                        stagionata e
-                                        zest di
-                                        lime
-                                    </p>
-                                    <p class="card-text">
-                                        12,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="bolognese" data-cost="12,00">Bolognese<button
-                                            type="button" class="bot-bolognese-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Mozzarella fior di latte, crema di burrata pugliese, mortadella di Bologna IGP e
-                                        pistacchi
-                                    </p>
-                                    <p class="card-text">
-                                        12,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="parma" data-cost="12,50">Parma<button type="button"
-                                            class="bot-parma-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, mozzarella fior di latte, mozzarella di bufala campana DOP,
-                                        prosciutto
-                                        crudo di Parma e rucola
-                                    </p>
-                                    <p class="card-text">
-                                        12,50 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body" id="solemare" data-cost="13,00">
-                                    <h5 class="card-title item">Sole e Mare<button type="button"
-                                            class="bot-solemare-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, mozzarella di bufala campana DOP, acciughe del Mar
-                                        Cantabrico,
-                                        sfilacci
-                                        di pomodoro secco e olive taggiasche
-                                    </p>
-                                    <p class="card-text">
-                                        13,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="norma2" data-cost="13,80">Norma 2.0<button
-                                            type="button" class="bot-norma2-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Mozzarella fior di latte, mozzarella di bufala campana DOP, crema di melanzane
-                                        fumé,
-                                        melanzane al forno, pomodorini confit, pinoli tostati e guanciale amatriciano
-                                        croccante
-                                    </p>
-                                    <p class="card-text">
-                                        13,80 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="4formaggi" data-cost="10,00">4 Formaggi<button
-                                            type="button" class="bot-4formaggi-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Mozzarella fior di latte, crema di gorgonzola DOP, provola fumé e pecorino
-                                    </p>
-                                    <p class="card-text">
-                                        10,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="twister" data-cost="10,00">Twister<button
-                                            type="button" class="bot-twister-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, crema di stracciatella, pomodorini confit, crema di
-                                        basilico e
-                                        olio evo
-                                    </p>
-                                    <p class="card-text">
-                                        10,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="contadina" data-cost="15,50">Contadina<button
-                                            type="button" class="bot-contadina-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Mozzarella fior di latte, cubetti di melanzane, bacon croccante, crema
-                                        gorgonzola e
-                                        cipolle
-                                        bionde del pastore
-                                    </p>
-                                    <p class="card-text">
-                                        15,50 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="venice" data-cost="11,00">Venice<button
-                                            type="button" class="bot-venice-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, mozzarella fior di latte, prosciutto cotto Gran Biscotto,
-                                        porcini e
-                                        funghi misti
-                                    </p>
-                                    <p class="card-text">
-                                        11,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="friarelli" data-cost="11,80">Friarelli<button
-                                            type="button" class="bot-friarelli-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, mozzarella fior di latte, friarelli, salsiccia fresca,
-                                        pecorino e
-                                        olio
-                                        evo
-                                    </p>
-                                    <p class="card-text">
-                                        11,80 €
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="piccantina" data-cost="11,80">Piccantina<button
-                                            type="button" class="bot-piccantina-btn btn btn-primary">Ordina</button>
-                                    </h5>
-                                    <p class="card-text">
-                                        Passata di pomodoro, mozzarella fior di latte, mozzarella di bufala campana DOP,
-                                        salame piccante, rucola e pomodorini
-                                    </p>
-                                    <p class="card-text">
-                                        11,80 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="norvegese" data-cost="13,80">Norvegese<button
-                                            type="button" class="bot-norvegese-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Mozzarella fior di latte, salmone marinato, zucchine alla citronette, pomodorini
-                                        confit,
-                                        mandorle tostate e rucola
-                                    </p>
-                                    <p class="card-text">
-                                        13,80 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="spadellata-mare" data-cost="14,00">Spadellata di
-                                        Mare<button type="button"
-                                            class="bot-spadellata-mare-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        passata di pomodoro, mozzarella fior di latte, spadellata di totani, calamare e
-                                        gamberetti
-                                    </p>
-                                    <p class="card-text">
-                                        14,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane container fade" id="panini">
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="torino" data-cost="9,00">Torino<button type="button"
-                                            class="bot-torino-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Pane fatto da noi, peperoni arrosto, uovo alla piastra, bagna cauda, verza
-                                        brasata,
-                                        pomodoro e contorno di patate arrosto al rosmarino
-                                    </p>
-                                    <p class="card-text">
-                                        9,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="milano" data-cost="10,00">Milano<button
-                                            type="button" class="bot-milano-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Pane fatto da noi, hamburger 16gr, crema di zafferano, zucca croccante,
-                                        pomodoro,
-                                        insalata e contorno di patate arrosto al rosmarino
-                                    </p>
-                                    <p class="card-text">
-                                        10.00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="palermo" data-cost="12,00">Palermo<button
-                                            type="button" class="bot-palermo-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Pane fatto d anoi, tonno alla griglia, maionese agli agrumi, pomodoro, scarola e
-                                        contorno di patate arrosto al rosmarino
-                                    </p>
-                                    <p class="card-text">
-                                        12,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="roma" data-cost="11,00">Roma<button type="button"
-                                            class="bot-roma-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Pane fatto da noi, calamaro ripiano in padella, crema di spinaci, pecorino
-                                        romano,
-                                        pomodoro, insalata e contorno di patate arrosto al rosmarino
-                                    </p>
-                                    <p class="card-text">
-                                        11,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="genova" data-cost="9,00">Genova<button type="button"
-                                            class="bot-genova-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Pane fatto da noi, lingua, crema di basilico, pinoli tostati, pomodoro, insalata
-                                        e
-                                        contorno di patate arrosto al rosmarino
-                                    </p>
-                                    <p class="card-text">
-                                        9.00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="napoli" data-cost="11,00">Napoli<button
-                                            type="button" class="bot-napoli-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Pane fatto da noi, polpo fritto, crema di mozzarella, cipolla caramellata,
-                                        pomodoro,
-                                        insalata e contorno di patate arrosto al rosmarino
-                                    </p>
-                                    <p class="card-text">
-                                        11,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane container fade" id="orientale">
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="ebi-gyoza" data-cost="4,50">Ebi Gyoza<button
-                                            type="button" class="bot-ebi-gyoza-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Ravioli di Gamberi
-                                    </p>
-                                    <p class="card-text">
-                                        4,50 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="tory-gyoza" data-cost="4,00">Tory Gyoza <button
-                                            type="button" class="bot-tory-gyoza-btn btn btn-primary">Ordina</button>
-                                    </h5>
-                                    <p class="card-text">
-                                        Ravioli di pollo e verdure alla griglia
-                                    </p>
-                                    <p class="card-text">
-                                        4.00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="harumaki" data-cost="3,00">Harumaki<button
-                                            type="button" class="bot-harumaki-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Involtino vegetariano
-                                    </p>
-                                    <p class="card-text">
-                                        3,00 €
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="ebi-harumaki" data-cost="4,50">Ebi Harumaki (3
-                                        pezzi)<button type="button"
-                                            class="bot-ebi-harumaki-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Involtini di Gamberi e verdure
-                                    </p>
-                                    <p class="card-text">
-                                        4,50 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="miso" data-cost="4,50">Miso<button type="button"
-                                            class="bot-miso-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Zuppa giapponese con tofu, alghe ed erba cipollina
-                                    </p>
-                                    <p class="card-text">
-                                        4.50 €
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="osumashi" data-cost="4,50">Osumashi<button type="button" class="bot-osumashi-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Zuppa Giapponese con granchio, gamberi, alghe e asparagi
-                                    </p>
-                                    <p class="card-text">
-                                        4,50 €
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="edamame" data-cost="2,50">Edamame<button type="button" class="bot-edamame-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Fagioli di soia
-                                    </p>
-                                    <p class="card-text">
-                                        2,50 €
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="salmone-marinato" data-cost="5,00">Salmone marinato<button type="button"
-                                        class="bot-salmone-marinato-btn btn btn-primary">Ordina</button>
-                                    </h5>
-                                    <p class="card-text">
-                                        Salmone marinato
-                                    </p>
-                                    <p class="card-text">
-                                        5.00 €
-                                    </p>
-                                   
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="ebi-shinjou" data-cost="5,00">Ebi Shinjou (5 pezzi)
-                                    <button type="button"
-                                        class="bot-salmone-ebi-shinjou-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Polpette di gamberi fritti
-                                    </p>
-                                    <p class="card-text">
-                                        5,00 €
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="tofu" data-cost="3,50">Tofu<button type="button" class="bot-tofu-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Tofu fresco in salsa di soia
-                                    </p>
-                                    <p class="card-text">
-                                        3,50 €
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="tartare-salmone" data-cost="4,00">Tartare di salmone
-                                        (2 pezzi)<button type="button"
-                                        class="bot-tartare-salmone-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Salmone tritato servito con salsa ed erba cipollina
-                                    </p>
-                                    <p class="card-text">
-                                        4.00 €
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="tartare-tonno" data-cost="5,00">Tartare di tonno (2
-                                        pezzi)<button type="button" class="bot-tartare-tonno-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Tonno tritato servito con salsa ed erba cipollina
-                                    </p>
-                                    <p class="card-text">
-                                        5.00 €
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="salmon-star" data-cost="6,00">Salmon Star (3 pezzi)
-                                    <button type="button" class="bot-salmon-star-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Salmone scottato, insalata, tempura di gambero e formaggio Philadefia
-                                    </p>
-                                    <p class="card-text">
-                                        6,00 €
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="koroke" data-cost="5,00">Koroke<button type="button" class="bot-koroke-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Crosta di patate con pesce, cipolla e salza speziata
-                                    </p>
-                                    <p class="card-text">
-                                        5.00 €
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="namaki" data-cost="5,00">Namaki<button type="button" class="bot-namaki-btn btn btn-primary">Ordina</button></h5>
-                                    <p class="card-text">
-                                        Ostriche
-                                    </p>
-                                    <p class="card-text">
-                                        5.00 €
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane container fade" id="bevande">
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="natavota" data-cost="6,00">K' Birr Natavota - artigianale<button type="button" class="bot-natavota-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Lager 5,2% vol.
-                                        </p>
-                                        <p class="card-text">
-                                            6,00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="cuore-napoli" data-cost="6,00">K Birr Cuore di Napoli - artigianale<button type="button" class="bot-cuore-napoli-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Apa 6% vol.
-                                        </p>
-                                        <p class="card-text">
-                                            6.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="jattura" data-cost="6,00">K Birr Jattura - artigianale<button type="button" class="bot-jattura-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Scotch Ale 8,5% vol.
-                                        </p>
-                                        <p class="card-text">
-                                            6.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="paliata" data-cost="6,00">K Birr Paliata - artigianale<button type="button" class="bot-paliata-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Imperia Stout 9,0% vol.
-                                        </p>
-                                        <p class="card-text">
-                                            6.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="paulaner-lager" data-cost="4,00">Paulaner Lager 33 cl<button type="button" class="bot-paulaner-lager-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Lager chiara Germania 4,9% vol.
-                                        </p>
-                                        <p class="card-text">
-                                            4.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="paulaner-weizen" data-cost="5,00">Paulaner Weizen 50 cl<button type="button"
-                                            class="bot-paulaner-weizen-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Chiara Germania 5,5% vol.
-                                        </p>
-                                        <p class="card-text">
-                                            5.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="cq-bionda" data-cost="6,00">Charles Quint Bionda 33 cl<button type="button" class="bot-cq-bionda-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Blond Ale Chiara Belgio 8,5% vol.
-                                        </p>
-                                        <p class="card-text">
-                                            6.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="cq-rossa" data-cost="6,00">Charles Quint Rossa 33 cl<button type="button" class="bot-cq-rossa-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Red Ale Ambrata Belgio 8,5% vol.
-                                        </p>
-                                        <p class="card-text">
-                                            6.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="heineken" data-cost="4,00">Heineken 33 cl<button type="button" class="bot-heineken-bot btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        4.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="corona" data-cost="5,00">Corona 33 cl<button type="button" class="bot-corona-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        5.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="becks" data-cost="5,00">Beck's 33 cl<button type="button" class="bot-becks-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        5.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="ceres" data-cost="5,00">Ceres 33 cl<button type="button" class="bot-ceres-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        5.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="tennents" data-cost="5,00">Tennent's 33 cl<button type="button" class="bot-tennents-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        5.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="mojito" data-cost="7,00">Mojito<button type="button" class="bot-mojito-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Rum bianco, spicchi di lime, soda, zucchero di canna e menta fresca
-                                        </p>
-                                        <p class="card-text">
-                                            7,00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="caipiroska" data-cost="7,00">Caipiroska<button type="button" class="bot-caipiroska-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Vodka, spicchi di lime e zucchero di canna
-                                        </p>
-                                        <p class="card-text">
-                                            7.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="caipirinha" data-cost="7,00">Caipirinha<button type="button" class="bot-caipirinha-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Cachaca, spicchi di lime e zucchero di canna
-                                        </p>
-                                        <p class="card-text">
-                                            7.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="long-island" data-cost="7,00">Long Island (Ice Tea)<button type="button" class="bot-lomg-island-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Vodka, Gin, Rum, Triple Sec, lime, zucchero e Coca-Cola
-                                        </p>
-                                        <p class="card-text">
-                                            7,00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="cocktail-martini" data-cost="7,00">Cocktail Martini<button type="button"
-                                            class="bot-cocktail-martini-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Vermouth dry e Gin
-                                        </p>
-                                        <p class="card-text">
-                                            7.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="vodka-martini" data-cost="7,00">Vodka Martini<button type="button" class="bot-vodka-martini-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Vermouth dry e Vodka
-                                        </p>
-                                        <p class="card-text">
-                                            7.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="frozen-margarita" data-cost="7,00">Frozen Margarita<button type="button"
-                                            class="bot-frozen-margarita-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Tequila, Cointreau e succo di lime
-                                        </p>
-                                        <p class="card-text">
-                                            7,00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="frozen-daiquiri" data-cost="7,00">Frozen Daiquiri<button type="button"
-                                            class="bot-frozen-daiquiri-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Rum, succo di lime e zucchero
-                                        </p>
-                                        <p class="card-text">
-                                            7.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="pinha-colada" data-cost="7,00">Pinha Colada<button type="button" class="bot-pinha-colada-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Rum, liquore al cocco e ananas
-                                        </p>
-                                        <p class="card-text">
-                                            7.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="margarita" data-cost="7,00">Margarita<button type="button" class="bot-margarita-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Tequila, Cointreau e succo di lime
-                                        </p>
-                                        <p class="card-text">
-                                            7,00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title item" id="ultimate-margarita" data-cost="7,00">Ultimate Margarita<button type="button"
-                                            class="bot-ultimate-margarita-btn btn btn-primary">Ordina</button></h5>
-                                    <p class=" card-text">
-                                        Tequila, Cointreau, succo di lime e succo d'arancia
-                                        </p>
-                                        <p class="card-text">
-                                            7.00 €
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <div class="cart container" id="carrello">
-            <h2 class="section-header">CARRELLO</h2>
-
-            <table id="cart-table">
-                <thead>
-                    <tr>
-                        <th>Prodotto</th>
-                        <th>Prezzo</th>
-                        <th>Quantità</th>
-                    </tr>
-                </thead>
-            </table>
-
-            <div class="cart-total" id="cartTotal">
-                <strong class="cart-total-title">Totale</strong>
-                <span class="cart-total-price">$0</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">ORDINA</button>
-        </div>
         </section>
-
         <section id="prenota">
-            <h5>Contattaci per prenotare un tavolo. Ti contatteremo al più presto per confermare la disponibilità.</h5>
-            <form action="#" method="post" class="p-3 p-md-4">
-                <div class="form-row">
-                    <div class="col-lg-4 col-md-6 form-group">
-                        <label for="name">Nome</label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Nome">
+            <section id="prenota">
+                <h5>Contattaci per prenotare un tavolo. Ti contatteremo al più presto per confermare la disponibilità.
+                </h5>
+                <form action="#" method="post" class="p-3 p-md-4">
+                    <div class="form-row">
+                        <div class="col-lg-4 col-md-6 form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Nome">
+                        </div>
+                        <div class="col-lg-4 col-md-6 form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                        </div>
+                        <div class="col-lg-4 col-md-6 form-group">
+                            <label for="phone">Telefono</label>
+                            <input type="number" class="form-control" name="phone" id="phone" placeholder="Telefono">
+                        </div>
+                        <div class="col-lg-4 col-md-6 form-group">
+                            <label for="date">Data</label>
+                            <input type="date" name="date" class="form-control" id="date" placeholder="Data">
+                        </div>
+                        <div class="col-lg-4 col-md-6 form-group">
+                            <label for="time">Ora</label>
+                            <input type="time" class="form-control" name="time" id="time" placeholder="Ora">
+                        </div>
+                        <div class="col-lg-4 col-md-6 form-group">
+                            <label for="people">Persone</label>
+                            <input type="number" class="form-control" name="people" id="people" placeholder="Persone">
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Messaggio"
+                            required></textarea>
                     </div>
-                    <div class="col-lg-4 col-md-6 form-group">
-                        <label for="phone">Telefono</label>
-                        <input type="number" class="form-control" name="phone" id="phone" placeholder="Telefono">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary">Invia</button>
                     </div>
-                    <div class="col-lg-4 col-md-6 form-group">
-                        <label for="date">Data</label>
-                        <input type="date" name="date" class="form-control" id="date" placeholder="Data">
-                    </div>
-                    <div class="col-lg-4 col-md-6 form-group">
-                        <label for="time">Ora</label>
-                        <input type="time" class="form-control" name="time" id="time" placeholder="Ora">
-                    </div>
-                    <div class="col-lg-4 col-md-6 form-group">
-                        <label for="people">Persone</label>
-                        <input type="number" class="form-control" name="people" id="people" placeholder="Persone">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Messaggio</label>
-                    <textarea class="form-control" name="message" id="message" rows="5" placeholder="Messaggio"
-                        required></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="button" class="btn btn-primary">Invia</button>
-                </div>
-            </form>
+                </form>
+            </section>
         </section>
     </main>
     <footer class="container-fluid">
         <div>
             <p class="foot">
-                Strada Provinciale 52, Km 2<br>
-                70024 Gravina in Puglia (BA)<br>
+                Strada Provinciale 52, Km 2<br />
+                70024 Gravina in Puglia (BA)<br />
                 <a href="tel:3898956550" class="addr"><i class="fa-solid fa-phone"></i>Chiamaci!</a><br />
-                <a href="mailto:>" class="addr"><i class="fa-solid fa-envelope"></i>Inviaci una e-mail!</a><br>
+                <a href="mailto:#>" class="addr"><i class="fa-solid fa-envelope"></i>Inviaci una e-mail!</a><br />
                 Partita IVA:
                 <!--inserire partita IVA-->
             </p>
             <div class="nav">
-                <a href="#" class="nav-item""><i class=" fa-brands fa-facebook"></i></a>
+                <a href="#" class="nav-item"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#" class="nav-item"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="nav-item"><i class="fa-brands fa-twitter"></i></a>
             </div>
@@ -1052,14 +128,16 @@
         </div>
     </footer>
     <!--SCRIPTS-->
+    <script src="./assets/js/Data.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
         crossorigin="anonymous"></script>
 </body>
 

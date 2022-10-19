@@ -1,62 +1,78 @@
-$().ready(function () {
-    // our pizza variable
-    let ordine = {
-        cost: 0.00,
-        bot: []
-    };
+let shop = document.getElementById("shop");
 
-    let ordineFlag = 0;
+let basket = JSON.parse(localStorage.getItem("data")) || [];
 
-    // getting the table and assigning it to a variable, making it a jQuery object
-    let cartTable = $('#cart-table');
-    // getting the total price label and making it a jQuery object.
-    let totalLabel = $('.cart-total-price');
+let generateShop = () => {
+  return (shop.innerHTML = shopItemsData
+    .map((x) => {
+      let { id, name, price, desc, img } = x;
+      let search = basket.find((x) => x.id === id) || [];
+      return `
+    <div id=product-id-${id} class="item">
+        <img width="220" src=${img} alt="">
+        <div class="details">
+          <h3>${name}</h3>
+          <p>${desc}</p>
+          <div class="price-quantity">
+            <h2>$ ${price} </h2>
+            <div class="buttons">
+              <i onclick="increment(${id})" class="fa-solid fa-square-plus"></i>
+              <div id=${id} class="quantity">
+              ${search.item === undefined ? 0 : search.item}
+              </div>
+              <i onclick="decrement(${id})" class="fa-solid fa-square-minus"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    })
+    .join(""));
+};
 
-    //adding toppings to pizza
-    $('[id^=bot-]').click(function () {
-        if (ordine == 0) {
-            alert("Aggiungi un prodotto.");
-        } else {
-            // splitting out the id as a name
-            let bot = this.id.split('-')[1];
-            // adding the topping name to the pizza topping array
-            ordine.bot.push(bot);
-            // adding the topping cost to the pizza cost, then changing the total text to reflect the new price
-            ordine.cost += $('#' + bot).data().cost;
-            totalLabel.text('€' + ordine.cost);
-            // creating a table row with the topping name and cost, appending to the table
-            cartTable.append(
-                "<tr>" +
-                "<td> " + bot + " </td> " +
-                "<td> " + $('#' + bot).data().cost + " </td> " +
-                "<td> 1 </td> " +
-                "<tr>"
-            );
-        }
-        // logging out the pizza to the console
-        console.log(ordine);
+generateShop();
+
+let increment = (id) => {
+  let selectedItem = id;
+  let search = basket.find((x) => x.id === selectedItem.id);
+
+  if (search === undefined) {
+    basket.push({
+      id: selectedItem.id,
+      item: 1,
     });
+  } else {
+    search.item += 1;
+  }
 
-    // adding a pizza
-    $('#ordine-btn').click(function () {
-        if (ordineFlag == 1) {
-            alert('Hai selezionato solo le spese di spedizione.');
-        } else {
-            ordineFlag = 1;
-            ordine.cost += 10;
-            console.log(ordine);
-            cartTable.append(
-                "<tr>" +
-                "<td> Spedizione </td> " +
-                "<td> 10 </td> " +
-                "<td> 1 </td> " +
-                "<tr>"
-            );
-            totalLabel.text('€10');
-        }
+  // console.log(basket);
+  update(selectedItem.id);
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+let decrement = (id) => {
+  let selectedItem = id;
+  let search = basket.find((x) => x.id === selectedItem.id);
 
-    });
+  if (search === undefined) return;
+  else if (search.item === 0) return;
+  else {
+    search.item -= 1;
+  }
+  update(selectedItem.id);
+  basket = basket.filter((x) => x.item !== 0);
+  // console.log(basket);
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+let update = (id) => {
+  let search = basket.find((x) => x.id === id);
+  // console.log(search.item);
+  document.getElementById(id).innerHTML = search.item;
+  calculation();
+};
 
+let calculation = () => {
+  let cartIcon = document.getElementById("cartAmount");
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+};
 
-
-});
+calculation();
