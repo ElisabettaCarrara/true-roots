@@ -81,6 +81,15 @@ a {
     color: black;
 }
 
+.nav-pills .nav-item .nav-link.active {
+    background-color: firebrick;
+    color: white;
+}
+
+.nav-pills .nav-item .nav-link {
+    color: black;
+}
+
 footer {
     background-color: firebrick;
     padding: 20px;
@@ -119,7 +128,8 @@ footer {
     color: yellow;
 }
 
-.display-4, .lead {
+.display-4,
+.lead {
     color: white;
 }
 
