@@ -23,16 +23,17 @@
             <a class="navbar-brand" href="#">
                 <img src="./assets/img/PlaceHolder.png" width="30" height="30" class="d-inline-block align-top"
                     alt="logo">
-                Bootstrap
+                True Roots
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse">
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="menu.html">Menu</a>
@@ -49,16 +50,24 @@
     </header>
     <main>
         <section class="pietanze">
-            <p class="listino">
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pizze"
-                    aria-expanded="false" aria-controls="pizze">
-                    Pizze
-                </button>
-            </p>
             <div>
-                <div class="collapse" id="pizze">
-                    <div class="card card-body">
-                        <!--UNO-->
+                <ul class="nav nav-pills justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#pizza" data-toggle="pill">Pizza</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#panini" data-toggle="pill">Panini</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#orientale" data-toggle="pill">Orientale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bevande" data-toggle="pill">Bevande</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane container active" id="pizza">
                         <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
@@ -95,7 +104,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--UNO-->
                         <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
@@ -138,7 +146,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--UNO-->
                         <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
@@ -180,7 +187,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--UNO-->
                         <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
@@ -221,7 +227,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--UNO-->
                         <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
@@ -265,7 +270,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--UNO-->
                         <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
@@ -306,18 +310,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <p class="listino">
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#panini"
-                    aria-expanded="false" aria-controls="panini">
-                    Panini
-                </button>
-            </p>
-            <div>
-                <div class="collapse" id="panini">
-                    <div class="card card-body">
+                    <div class="tab-pane container fade" id="panini">
                         <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
@@ -400,17 +393,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <p class="listino">
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#cucina-orientale"
-                    aria-expanded="false" aria-controls="cucina-orientale">
-                    Orientale
-                </button>
-            </p>
-            <div>
-                <div class="collapse" id="cucina-orientale">
-                    <div class="card card-body">
+                    <div class="tab-pane container fade" id="orientale">
                         <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
@@ -587,17 +570,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <p class="listino">
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#bevande"
-                    aria-expanded="false" aria-controls="bevande">
-                    Bevande
-                </button>
-            </p>
-            <div>
-                <div class="collapse" id="bevande">
-                    <div class="card card-body">
+                    <div class="tab-pane container fade" id="bevande">
                         <p>Le birre artigianali sono contraddistinte dallo sfondo giallo chiaro</p>
                         <div class="card-deck">
                             <div class="card" id="arti">
@@ -726,6 +699,8 @@
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Tennent's 33 cl</h5>
@@ -734,9 +709,6 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <h3>Cocktail</h3>
-                        <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Mojito</h5>
@@ -759,6 +731,8 @@
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Caipirinha</h5>
@@ -770,8 +744,6 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Long Island (Ice Tea)</h5>
@@ -794,6 +766,8 @@
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Vodka Martini</h5>
@@ -805,8 +779,6 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Frozen Margarita</h5>
@@ -829,6 +801,8 @@
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Pinha Colada</h5>
@@ -840,8 +814,6 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-deck">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Margarita</h5>
@@ -910,25 +882,30 @@
         <section id="prenota">
             <h5>Contattaci per prenotare un tavolo. Ti contatteremo al più presto per confermare la disponibilità.</h5>
             <form action="#" method="post" class="p-3 p-md-4">
-                <div class="row">
-                    <div class="col-xl-6 form-group">
+                <div class="form-row">
+                    <div class="col-lg-4 col-md-6 form-group">
                         <label for="name">Nome</label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Nome" required>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Nome">
                     </div>
-                    <div class="col-xl-6 form-group">
+                    <div class="col-lg-4 col-md-6 form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-6 form-group">
+                    <div class="col-lg-4 col-md-6 form-group">
                         <label for="phone">Telefono</label>
-                        <input type="tel" name="phone" class="form-control" id="phone" placeholder="Telefono" required>
+                        <input type="number" class="form-control" name="phone" id="phone" placeholder="Telefono">
                     </div>
-                    <div class="col-xl-6 form-group">
-                        <label for="subject">Oggetto</label>
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Oggetto"
-                            required>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="date">Data</label>
+                        <input type="date" name="date" class="form-control" id="date" placeholder="Data">
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="time">Ora</label>
+                        <input type="time" class="form-control" name="time" id="time" placeholder="Ora">
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="people">Persone</label>
+                        <input type="number" class="form-control" name="people" id="people" placeholder="Persone">
                     </div>
                 </div>
                 <div class="form-group">
