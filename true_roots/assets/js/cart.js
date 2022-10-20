@@ -32,25 +32,26 @@ let generateCartItems = () => {
       .map((x) => {
         let { id, item } = x;
         let search = shopItemsData.find((x) => x.id === id) || [];
-        let { price, name } = search;
+        let { img, price, name } = search;
         return `
       <div class="cart-item">
+        <img width="100" src=${img} alt="" />
 
         <div class="details">
         
           <div class="title-price-x">
             <h4 class="title-price">
               <p>${name}</p>
-              <p class="cart-item-price">${price} €</p>
+              <p class="cart-item-price">$ ${price}</p>
             </h4>
-            <i onclick="removeItem(${id})" class="fa-solid fa-xmark"></i>
+            <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
           </div>
 
           <div class="cart-buttons">
             <div class="buttons">
-              <i onclick="increment(${id})" class="fa-solid fa-square-plus"></i>
+              <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
               <div id=${id} class="quantity">${item}</div>
-              <i onclick="decrement(${id})" class="fa-solid fa-square-minus"></i>
+              <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
             </div>
           </div>
 
@@ -64,9 +65,9 @@ let generateCartItems = () => {
   } else {
     ShoppingCart.innerHTML = "";
     label.innerHTML = `
-    <h2>Il carrello è vuoto</h2>
+    <h2>Cart is Empty</h2>
     <a href="index.html">
-      <button class="HomeBtn btn btn-primary">Home</button>
+      <button class="HomeBtn">Back to Home</button>
     </a>
     `;
   }
@@ -158,9 +159,9 @@ let TotalAmount = () => {
       .reduce((x, y) => x + y, 0);
 
     return (label.innerHTML = `
-    <h2>Totale : ${amount} €</h2>
-    <button class="checkout btn btn-primary">Invia Ordine</button>
-    <button onclick="clearCart()" class="removeAll btn btn-primary">Svuota Carrello</button>
+    <h2>Total Bill : $ ${amount}</h2>
+    <button class="checkout">Checkout</button>
+    <button onclick="clearCart()" class="removeAll">Clear Cart</button>
     `);
   } else return;
 };
