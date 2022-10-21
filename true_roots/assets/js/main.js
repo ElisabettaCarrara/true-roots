@@ -16,25 +16,29 @@ let basket = JSON.parse(localStorage.getItem("data")) || [];
 let generateShop = () => {
   return (shop.innerHTML = shopItemsData
     .map((x) => {
-      let { id, cat, name, desc, price } = x;
+      let { id, name, desc, price } = x;
       let search = basket.find((y) => y.id === id) || [];
       return `
-      <div id=product-id-${id} class="item ${cat}">
-      <div class="details box">
-          <h3>${name}</h3>
-          <p>${desc}</p>
-          <div class="price-quantity">
-              <h5>${price} €</h5>
-                  <div class="buttons box">
-                      <i onclick="increment(${id})" class="fa-solid fa-square-plus"></i>
-                      <div id=${id} class="quantity">${
-                          search.item === undefined ? 0 : search.item
-                          }</div>
-                      <i onclick="decrement(${id})" class="fa-solid fa-square-minus"></i>
-                  </div>
-          </div>
-      </div>
+<div id=product-id-${id} class="item">
+  <div class="details box">
+    <h3>
+      ${name}
+    </h3>
+    <p>
+      ${desc}
+    </p>
+    <div class="price-quantity">
+        <h5>
+          ${price} €
+        </h5>
+        <div class="buttons box">
+          <i onclick="increment(${id})" class="fa-solid fa-square-plus"></i>
+          <div id=${id} class="quantity">${search.item === undefined ? 0 : search.item}</div>
+          <i onclick="decrement(${id})" class="fa-solid fa-square-minus"></i>
+        </div>
+    </div>
   </div>
+</div>
     `;
     })
     .join(""));
