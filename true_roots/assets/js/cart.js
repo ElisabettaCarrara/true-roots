@@ -32,26 +32,26 @@ let generateCartItems = () => {
       .map((x) => {
         let { id, item } = x;
         let search = shopItemsData.find((x) => x.id === id) || [];
-        let { img, price, name } = search;
+        let { price, name } = search;
         return `
-      <div class="cart-item">
-        <img width="100" src=${img} alt="" />
+        <form action="ordina-food.php" method="post" role="form" class="p-3 p-md-4"> 
+        <div class="cart-item">
 
         <div class="details">
         
           <div class="title-price-x">
             <h4 class="title-price">
               <p>${name}</p>
-              <p class="cart-item-price">$ ${price}</p>
+              <p class="cart-item-price">€ ${price}</p>
             </h4>
-            <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
+            <i onclick="removeItem(${id})" class="<i class="fa-solid fa-xmark"></i>"></i>
           </div>
 
           <div class="cart-buttons">
             <div class="buttons">
-              <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+              <i onclick="increment(${id})" class="fa-solid fa-square-plus"></i>
               <div id=${id} class="quantity">${item}</div>
-              <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+              <i onclick="decrement(${id})" class="fa-solid fa-square-minus"></i>
             </div>
           </div>
 
@@ -159,9 +159,11 @@ let TotalAmount = () => {
       .reduce((x, y) => x + y, 0);
 
     return (label.innerHTML = `
-    <h2>Total Bill : $ ${amount}</h2>
+    <h2>Total Bill : € ${amount}</h2>
+    <form action="ordina-food.php" method="post" role="form" class="p-3 p-md-4">
     <button class="checkout">Checkout</button>
-    <button onclick="clearCart()" class="removeAll">Clear Cart</button>
+    <button onclick="clearCart()" class="removeAll">Svuota Carrello</button>
+    </form>
     `);
   } else return;
 };
